@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "monero-nodejs": "^3.2.2"
+  }
+}
