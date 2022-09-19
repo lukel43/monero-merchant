@@ -1,20 +1,10 @@
-var moneroWallet = require('./lib/wallet');
-var Wallet = new moneroWallet();
+var moneroWallet = require('monero-nodejs');
+var hostName = 'node.sethforprivacy.com';
+var port = 18089;
+var Wallet = new moneroWallet(hostName, port);
 
 // examples
 
-Wallet.create_wallet('monero_wallet').then(function(result){
-    console.log(result);
-});
-
-Wallet.open_wallet('monero_wallet').then((result) => {
-    console.log(result);
-});
-
-Wallet.address().then((result) => {
-    console.log(result);
-});
-
-Wallet.balance().then((result) => {
-    console.log(result);
+Wallet.balance().then(function(balance) {
+    console.log(balance);
 });
