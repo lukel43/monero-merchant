@@ -1,10 +1,15 @@
 var moneroWallet = require('monero-nodejs');
-var hostName = 'node.sethforprivacy.com';
+var hostName = 'mmc.chompe.rs';
 var port = 18089;
-var Wallet = new moneroWallet(hostName, port);
+var Wallet = new moneroWallet('mmc.chompe.rs', 18080);
 
-// examples
+// var testWallet = Wallet.create_wallet('test_js_wallet', 'test', 'English');
 
-Wallet.balance().then(function(balance) {
-    console.log(balance);
+/*
+Wallet.create_wallet('test_js_wallet', 'test', 'English').then(function(result){
+    console.log(result);
 });
+*/
+
+var height = Wallet.height();
+console.log(height);
