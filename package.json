@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "monero-nodejs": "^3.2.2",
+    "monero-javascript": "^0.7.4",
     "npm": "^8.19.2",
     "test": "^3.2.1"
   }
