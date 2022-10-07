@@ -13,14 +13,19 @@ const run = async () => {
     "http://mmc.chompe.rs:18089"
   );
   */
-  
-  // Create keys-only wallet
-  let wallet = await monerojs.createWalletKeys({
-    password: "abc123",
-    networkType: "testnet"
- });
   // Grab block height
   let height = await daemon.getHeight();
+
+  // Create keys-only wallet
+  let wallet = await monerojs.createWalletFull({
+    password: "abc123",
+    networkType: "stagenet",
+    serverUri: "http://mmc.chompe.rs:18080",
+    restoreHeight: height,
+ });
+  let ans = await wallet.isConnectedToDaemon();
+  console.log(ans);
+  
   // console.log("Block height: ", height);
   // Grab fee estimate
   let feeEstimate = await daemon.getFeeEstimate()
