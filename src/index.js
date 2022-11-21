@@ -8,18 +8,21 @@ const run = async () => {
   );
   let height = await daemon.getHeight();
   console.log(height);
-  
-  
-  let walletRpc = new monerojs.MoneroWalletRpc(
+
+  let walletRpc = await monerojs.connectToWalletRpc(
     "http://mmc.chompe.rs:38081",
-    "test_user",
-    "password123"
   );
 
-  await walletRpc.createWallet({
-    path: "testwallet",
-    password: "password123"
- });
+  //await walletRpc.createWallet({
+  //  path: "testwallet",
+  //  password: "password123"
+  //});
+  let wallet = await monerojs.createWalletFull({
+    path: "./testwallet2",
+    password: "password123",
+    networkType: monerojs.MoneroNetworkType.STAGENET,
+    server: new monerojs.MoneroRpcConnection("http://mmc.chompe.rs:38081")
+  });
 };
 
 run();
