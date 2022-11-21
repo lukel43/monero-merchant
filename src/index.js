@@ -16,11 +16,9 @@ const run = async () => {
     "stagenet"
   );
 
-  let walletFull = await monerojs.createWalletFull({
-    path: "sample_wallet_full",
-    password: "password123",
-    networkType: "stagenet",
-    serverUri: "http://mmc.chompe.rs:38081",
+  await walletRpc.createWallet({
+    path: "testwallet",
+    password: "password123"
   });
 };
 
