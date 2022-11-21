@@ -10,16 +10,16 @@ const run = async () => {
   console.log(height);
   
   
-  let walletRpc = await monerojs.connectToWalletRpc(
+  let walletRpc = new monerojs.MoneroWalletRpc(
     "http://mmc.chompe.rs:38081",
     "test_user",
-    "stagenet"
+    "password123"
   );
 
   await walletRpc.createWallet({
     path: "testwallet",
     password: "password123"
-  });
+ });
 };
 
 run();
