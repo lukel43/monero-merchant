@@ -30,7 +30,7 @@ const run = async () => {
   console.log("Balance: ", balance);
   console.log("Transfers: ", transfers);
 
-  /* Test sending funds
+  // Test sending funds
   let tx = await wallet.createTx({
     accountIndex: 0,  // source account to send funds from
     address: "565MFUjqb9mUhKnppsE5RW5ssAjfniy2UWBFZX6dcfetYj1eEZrZq41bRyh4axRib5eAN91Efz51mbbxydEpvHhN6WRpqga",
@@ -42,7 +42,7 @@ const run = async () => {
   
   // relay the transaction
   let hash = await wallet.relayTx(tx);
-  */
+  //
 };
 
 run();
